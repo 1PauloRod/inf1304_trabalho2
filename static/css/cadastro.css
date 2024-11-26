@@ -1,0 +1,119 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    background: rgb(214, 214, 214);
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 90%;
+}
+
+.cadastro-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    border-color: rgb(31, 73, 163);
+    width: 90%;
+    height: 250px;
+}
+
+.cadastro-card h1{
+    color: rgb(31, 73, 163);
+    font-weight: 500;
+}
+
+.cadastro-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadastro-form input{
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-color: rgb(31, 73, 163);
+    background: rgb(214, 214, 214);
+    border-radius: 5px;
+}
+
+.cadastro-form input::placeholder{
+    color: rgb(31, 73, 163);
+}
+
+.email-input{
+    width: 98%;
+}
+
+.cadastro-btn{
+    margin-top: 5px;
+    width: 100px;
+    height: 25px;
+    font-weight: 700;
+    color: rgb(31, 73, 163);
+}
+
+.cadastro-btn:hover{
+    cursor: pointer;
+    border-color: rgb(248, 248, 71);
+    background: rgb(31, 73, 163);
+    color: rgb(214, 214, 214);
+}
+
+.cadastro-card p{
+    color: rgb(31, 73, 163);
+}
+
+.cadastro-card p a{
+    color: rgb(31, 73, 163);
+}
+
+.cadastro-card p a:hover{
+    color: white;
+}
+
+input.erro-senha{
+    border-color: red;
+}
+
+input.erro-senha::placeholder{
+    color: red;
+    border-color: red;
+}
+
+input.erro-email-cadastrado {
+    border: 2px solid red;
+}
+
+input.erro-email-cadastrado::placeholder{
+    color: red; 
+}
+
+.mensagem-erro{
+    color: red; 
+    font-weight: 700;
+}
+
+.rodape{
+    position: fixed;
+    margin-top: auto;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.rodape p{
+    color: rgb(31, 73, 163);
+}

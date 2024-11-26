@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title> cadastro </title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="cadastro-card">
+        <h1>LOGIN</h1>
+            <form class="cadastro-form" action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <input class="email-input" type="email" name="email" placeholder="email" required>
+                <input type="password" name="password" placeholder="senha" required>
+                
+                <input class="cadastro-btn" type="submit" value="login">
+            </form>
+            <p>Não tem login? faça o <a href="{% url 'cadastro' %}">cadastro!</a></p>
+        </div>
+        {% if aviso_confirmacao_email %}
+        <p class="mensagem-erro">Você precisa confirmar seu email para fazer login!</p>
+    {% endif %}
+
+    {% if erro_credencial %}
+        <p class="mensagem-erro" >email ou senha incorretos!</p>
+    {% endif %}
+    </div>
+    
+   
+
+    <footer class="rodape">
+        <p>&copy; Criado por Luan Ferreira e Paulo Rodrigues</p>
+    </footer>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    background: rgb(214, 214, 214);
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 90%;
+}
+
+.card-mensagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(31, 73, 163);
+    height: 300px;
+    width: 100%;
+}
+
+.card-mensagem a{
+    margin-top: 10px;
+}
+
+.rodape{
+    position: fixed;
+    margin-top: auto;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.rodape p{
+    color: rgb(31, 73, 163);
+}

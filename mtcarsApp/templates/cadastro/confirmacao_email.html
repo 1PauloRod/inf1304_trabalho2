@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carro_reservado.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-mensagem">
+            Para completar o cadastro, verifique o email enviado para {{ cliente_email }} e faça o <a href="{% url 'verifica_validacao_email' cliente_email  %}">login!</a>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; Criado por Luan Ferreira e Paulo Rodrigues</p>
+    </footer>
+    
+{% endblock %}

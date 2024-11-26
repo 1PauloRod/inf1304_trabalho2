@@ -1,0 +1,192 @@
+body, html{
+    height: 100%;
+    margin: 0; 
+    background: rgb(214, 214, 214);
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 90%;
+}
+
+.frase-logout{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.frase-logout h2{
+    margin-left: 20px;
+    color: rgb(31, 73, 163);
+}
+
+.logout-btn{
+    margin-right: 20px;
+    font-size: 20px;
+    color: rgb(31, 73, 163);
+}
+
+.logout-btn:hover{
+    color: white;
+}
+
+.home-form{
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    gap: 15px;
+}
+
+.ano-input{
+    height: 23px;
+    border-radius: 15px;
+    border: 2px solid black;
+    border-color: rgb(31, 73, 163);
+    color: rgb(31, 73, 163);
+}
+
+.buscar-btn{
+    height: 25px;
+    border-radius: 5px;
+    font-weight: 700;
+    border-color: rgb(31, 73, 163);
+    color: rgb(31, 73, 163);
+}
+
+.buscar-btn:hover{
+    background: rgb(31, 73, 163);
+    color: white;
+    cursor: pointer;
+}
+
+.home-form select{ 
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 15px;
+    font-weight: 700;
+    border-color: rgb(31, 73, 163);
+    color: rgb(31, 73, 163);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: rgb(31, 73, 163);
+}
+
+.reserva-notifica{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.reserva-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 75px;
+    height: 25px;
+    text-decoration: none;
+    color: rgb(31, 73, 163);
+    border-color: rgb(31, 73, 163);
+    background: rgb(214, 214, 214);
+}
+
+.notifica-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 100px;
+    height: 25px;
+    text-decoration: none;
+    color: rgb(31, 73, 163);
+    border-color: rgb(31, 73, 163);
+    background: rgb(214, 214, 214);
+
+}
+
+.reserva-btn:hover{
+    cursor: pointer;
+    background: rgb(31, 73, 163);
+    color: white;
+}
+
+.notifica-btn:hover{
+    cursor: pointer;
+    background: rgb(31, 73, 163);
+    color: white;
+}
+
+.reservou-msg{
+    color: rgb(31, 73, 163);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.erro-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.erro-msg p{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.indisponivel{
+    color: red;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.rodape{
+    position: fixed;
+    margin-top: auto;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.rodape p{
+    color: rgb(31, 73, 163);
+}

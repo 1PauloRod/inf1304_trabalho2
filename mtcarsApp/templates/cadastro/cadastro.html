@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    <title> cadastro </title>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <div class="cadastro-card">
+        <h1>CADASTRO</h1>
+            <form class="cadastro-form" action="{% url 'cadastro' %}" method="POST">
+                {% csrf_token %}
+
+                <div class="nome-sobrenome-input">
+                    <input type="text" name="nome" placeholder="nome" value="{{ nome|default:'' }}" required>
+                    <input type="text" name="sobrenome" placeholder="sobrenome" value="{{ sobrenome|default:'' }}" required> 
+                </div>
+
+                <input class="email-input {% if email_cadastrado %}erro-email-cadastrado{% endif %}" 
+                type="email" name="email" 
+                placeholder="{% if email_cadastrado %}email já cadastrado{% else %}email{% endif %}" 
+                value="{{ email|default:'' }}" 
+                required>
+                
+                <div class="senha-confirma-input">
+                    
+                    <input type="password" name="password" placeholder="senha" required>
+                    <input type="password" name="confirma-password" 
+                    {% if erroSenha %}
+                        class="erro-senha" 
+                        placeholder="Senhas não coincidem"
+                    {% else %}
+                        placeholder="confirma senha"
+                    {% endif %} required>
+                    
+                   
+                    
+                </div>
+                <input class="cadastro-btn" type="submit" value="Cadastrar">
+            </form>
+            <p>já cadastrado? faça o <a href="{% url 'login' %}">login!</a></p>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; Criado por Luan Ferreira e Paulo Rodrigues</p>
+    </footer>
+
+{% endblock %}

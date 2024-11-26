@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    <title> Home </title>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="frase-logout">
+            <h2>Seja bem vindo, {{cliente.nome}}!</h2>
+            <a class="logout-btn" href="{% url 'logout' %}">logout</a>
+        </div>
+        <br><br>
+
+        <form class="home-form" action="{% url 'home' %}" method="POST">
+            {% csrf_token %}
+            <select name="modelo" id="modelo">
+                {% for car in carros %}
+                    <option value="{{car.modelo}}" {% if car.modelo == modelo_selecionado %} selected {% endif %}>
+                        {{car.modelo}}
+                    </option>
+                {% endfor %}
+            </select>
+
+            <input class="ano-input" type="number" id="ano" name="ano" min="1990" max="2024" placeholder="ano" required>
+            <input class="buscar-btn" type="submit" value="Buscar">
+        </form>
+        
+        <div class="erro-msg">
+            {% if erro %}
+                <p>{{erro}}</p>
+            {% endif %}
+        </div>
+
+        {% if carro %}
+            {% if carro.body.carro %}
+                <table class="carros-tabela">
+                    <thead>
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Ano</th>
+                            <th>Disponibilidade</th>
+                            <th>Preço</th>
+                        </tr>
+                    </thead>                            
+
+                    <tbody>
+                        <tr>
+                            <td>{{ carro.body.carro.modelo }}</td>
+                            <td>{{ carro.body.carro.ano }}</td>
+                            <td class="{% if carro.body.carro.disponibilidade == False %}indisponivel{% endif %}">{{ carro.body.carro.disponibilidade|yesno:"Disponível,Indisponível" }}</td>
+                            <td>{{ carro.body.carro.preco|floatformat:2 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="reserva-notifica">
+            
+                {% if carro.body.carro.disponibilidade %}
+            
+                    {% if cliente in carro.body.carro.clientes_reservados %}
+                        <a class="reservou-msg">Você já reservou.</a>
+                    {% else %}
+                        <a class="reserva-btn" href="{% url 'reservar' carro.body.carro.id  %}">Reservar</a>
+                    {% endif %}
+            
+                {% else %}
+                    {% if cliente in carro.body.carro.clientes_interessados %}
+                        <a class="reservou-msg">Você será notificado quando o carro estiver disponível!</a>
+                    {% else %}
+                        <a class="notifica-btn" href="{% url 'notificar' carro.body.carro.id %}">Notificar-me</a>
+                    {% endif %}
+                {% endif %}
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; Criado por Luan Ferreira e Paulo Rodrigues</p>
+    </footer>
+                   
+    
+{% endblock %}

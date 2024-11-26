@@ -1,0 +1,78 @@
+body, html{
+    height: 100%;
+    margin: 0; 
+    background: rgb(214, 214, 214);
+}
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 90%;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+.cadastro-card{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgb(31, 73, 163);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: rgb(31, 73, 163);
+}
+
+.cadastro-card:hover{
+    font-weight: 700;
+    color: rgb(248, 248, 71);
+    border: 4px solid rgb(248, 248, 71);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.login-card{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 200px;
+    border: 3px solid rgb(31, 73, 163);
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 500;
+    color: rgb(31, 73, 163);
+}
+
+.login-card:hover{
+    font-weight: 700;
+    color: rgb(248, 248, 71);
+    border: 4px solid rgb(248, 248, 71);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.rodape{
+    position: fixed;
+    margin-top: auto;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.rodape p{
+    color: rgb(31, 73, 163);
+}

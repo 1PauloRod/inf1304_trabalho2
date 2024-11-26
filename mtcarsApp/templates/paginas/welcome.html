@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/welcome.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+    <div class="card">
+
+        <a href="{% url 'cadastro' %}">
+        <div class="cadastro-card">
+            Cadastro
+        </div>
+        </a>
+
+        <a href="{% url 'login' %}">
+            <div class="login-card">
+                Login
+            </div>
+        </a>
+
+    </div>
+
+    <footer class="rodape">
+        <p>&copy; Criado por Luan Ferreira e Paulo Rodrigues</p>
+    </footer>
+
+{% endblock %}
