@@ -85,7 +85,6 @@ def verifica_validacao_email_view(request, cliente_email):
                 cliente.save()
                 login(request, cliente)
                 return redirect("home")
-            
             else:
                 return redirect("login")
                 

@@ -13,7 +13,7 @@
     <div class="card">
         <div class="cadastro-card">
         <h1>LOGIN</h1>
-            <form class="cadastro-form" action="{% url 'login' %}" method="POST">
+            <form id="login-form" class="cadastro-form" action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <input class="email-input" type="email" name="email" placeholder="email" required>
                 <input type="password" name="password" placeholder="senha" required>
@@ -37,4 +37,8 @@
         <p>&copy; Criado por Luan Ferreira e Paulo Rodrigues</p>
     </footer>
 
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'scripts/recarrega_pagina.js' %}"></script>
 {% endblock %}
